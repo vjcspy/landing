@@ -1,0 +1,368 @@
+@font-face {
+  font-family: BerlinSanBold;
+  src: url("../font/Berlin Sans FB Demi Bold/BerlinSansFBDemiBold.ttf");
+}
+
+@font-face {
+  font-family: MontserratRegular;
+  src: url("../font/Montserrat/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: MontserratSemiBold;
+  src: url("../font/Montserrat/Montserrat-SemiBold.ttf");
+}
+html {
+  scroll-behavior: smooth;
+}
+.modal-backdrop{
+  background-color: #000000a3 !important;
+  .here-pop{
+    @media all and (max-width: 768px){
+      width: 90%;
+      height: unset;
+      margin: auto;
+      left: 5%;
+    }
+    display: block;
+    z-index: 9999;
+    position: absolute;
+    top: 100px;
+    left: 30%;
+    background: #fff;
+    width: 600px;
+    height: 250px;
+    padding: 30px 30px 30px 30px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px #1c1919;
+    .title{
+      color: #652528;
+      font-size: 18px;
+      font-family: MontserratRegular;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #dddddd;
+    }
+    ul{
+      padding-inline-start: 18px;
+      margin-bottom: 0px !important;
+      li{
+        font-size: 14px;
+        margin-bottom: 17px;
+        &::marker{
+          color: #652528;
+        }
+        .y{
+          color: #9B3734;
+          font-weight: 600;
+        }
+      }
+    }
+    .hide-pop{
+      position: absolute;
+      right: -18px;
+      top: -18px;
+      width: 35px;
+      height: 35px;
+      display: block;
+      background: #9B3734;
+      text-align: center;
+      border-radius: 50%;
+      color: #fff;
+      border: 3px solid #0000007a;
+      box-sizing: content-box;
+      svg{
+        margin-top: 11px;
+      }
+    }
+  }
+}
+
+#main {
+  font-family: MontserratRegular;
+  .title{
+    font-family: BerlinSanBold;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+    margin-top: 65px;
+    -webkit-text-stroke: 3px #CD5907;
+    -webkit-text-fill-color: white;
+    -webkit-animation: fill 0.5s infinite alternate;
+  }
+  .outer-filter{
+    .filter-x{
+      color: #FDE033;
+      border:1px solid #9B3734;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 27px;
+      width: 120px;
+      height: 45px;
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      img{
+        margin-right: 7px;
+      }
+    }
+    .filter-y{
+      color: #FDE033;
+      border:1px solid #9B3734;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 27px;
+      width: 87px;
+      height: 40px;
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      i{
+        margin-left: 3px;
+      }
+    }
+    .filter{
+      display: none;
+      font-size: 14px;
+      color: #fff;
+      padding-bottom: 20px;
+      font-family: Montserrat;
+    }
+    .item{
+      a{
+        color: #fff;
+        text-decoration: none;
+        margin-right: 10px;
+        margin-left: 10px;
+        font-size: 14px;
+        display: inline-block;
+      }
+    }
+    .all{
+      padding: 5px 10px;
+      font-size: 14px;
+      background: #9B3734;
+      border:0;
+      border-radius: 5px;
+      color: #FDE033;
+      text-decoration: none;
+    }
+    .col-md-2 {
+      flex: 0 0 13.666667%;
+      max-width: 13.666667%;
+    }
+    .col-md-8 {
+      flex: 0 0 70.666667%;
+      max-width: 70.666667%;
+    }
+    .col-md-1 {
+      flex: 0 0 7.333333%;
+      max-width: 7.333333%;
+      .fa-angle-down{
+        color: #FDE033;
+      }
+      span{
+        float: right;
+      }
+    }
+  }
+  .outer-prd {
+
+    .item {
+      color: #fff;
+      max-width: 315px;
+      margin: 0px auto 45px;
+      .box_img {
+        background: url("../images/shoppage/bg-item.svg") center center no-repeat;
+        height: 247px;
+        width: 270px;
+        margin: auto;
+        display: -webkit-box;
+        img {
+          width: 216px;
+          height: 194px;
+          margin-left: 25px;
+          margin-top: 25px;
+          object-fit: contain;
+          overflow: hidden;
+
+        }
+      }
+      .price {
+        display: flex;
+        margin-bottom: 10px;
+        .text {
+          width: 50%;
+          float: left;
+          text-align: left;
+        }
+        .right-price {
+          img {
+            display: unset;
+            width: 20px;
+            height: 20px;
+            margin-right: 20px;
+          }
+          p {
+            text-align: right;
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .name {
+        font-family: Montserrat;
+        font-size: 16px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+      .role {
+        font-size: 14px;
+        text-transform: uppercase;
+      }
+      .buyBtn {
+        position: relative;
+        margin-right: 20px;
+        &:hover {
+          .line-x {
+            left: calc(100% - 54px);
+          }
+          span {
+            color: red;
+          }
+          img:hover {
+            /* Start the shake animation and make the animation last for 0.5 seconds */
+            animation: shake 0.7s;
+
+            /* When the animation is finished, start again */
+            animation-iteration-count: infinite;
+          }
+
+          span:hover {
+            /* Start the shake animation and make the animation last for 0.5 seconds */
+            animation: shake 0.7s;
+
+            /* When the animation is finished, start again */
+            animation-iteration-count: infinite;
+          }
+
+          @keyframes shake {
+            0% {
+              transform: translate(1px, 1px) rotate(0deg);
+            }
+            10% {
+              transform: translate(-1px, -2px) rotate(-1deg);
+            }
+            20% {
+              transform: translate(-3px, 0px) rotate(1deg);
+            }
+            30% {
+              transform: translate(3px, 2px) rotate(0deg);
+            }
+            40% {
+              transform: translate(1px, -1px) rotate(1deg);
+            }
+            50% {
+              transform: translate(-1px, 2px) rotate(-1deg);
+            }
+            60% {
+              transform: translate(-3px, 1px) rotate(0deg);
+            }
+            70% {
+              transform: translate(3px, 1px) rotate(-1deg);
+            }
+            80% {
+              transform: translate(-1px, -1px) rotate(1deg);
+            }
+            90% {
+              transform: translate(1px, 2px) rotate(0deg);
+            }
+            100% {
+              transform: translate(1px, -2px) rotate(-1deg);
+            }
+          }
+        }
+        span {
+          position: absolute;
+          left: 37px;
+          top: 0px;
+          z-index: 99999;
+          font-weight: 600;
+          color: #fff;
+          text-transform: uppercase;
+        }
+        .line-x {
+          position: absolute;
+          left: 0px;
+          top: -7px;
+          transition: 0.8s;
+        }
+      }
+    }
+  }
+  .outer-spiner {
+    text-align: center;
+    margin: 60px auto 30px;
+
+    .lds-spinner {
+      color: official;
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      height: 80px;
+    }
+    .lds-spinner div {
+      transform-origin: 40px 40px;
+      animation: lds-spinner 1.2s linear infinite;
+    }
+    .lds-spinner div:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 39px;
+      width: 2px;
+      height: 22px;
+      border-radius: 20%;
+      background: #fff;
+    }
+    .lds-spinner div:nth-child(1) {
+      transform: rotate(0deg);
+      animation-delay: -1.2s;
+    }
+    .lds-spinner div:nth-child(2) {
+      transform: rotate(60deg);
+      animation-delay: -1s;
+    }
+    .lds-spinner div:nth-child(3) {
+      transform: rotate(120deg);
+      animation-delay: -0.8s;
+    }
+    .lds-spinner div:nth-child(4) {
+      transform: rotate(180deg);
+      animation-delay: -0.6s;
+    }
+    .lds-spinner div:nth-child(5) {
+      transform: rotate(240deg);
+      animation-delay: -0.4s;
+    }
+    .lds-spinner div:nth-child(6) {
+      transform: rotate(300deg);
+      animation-delay: -0.2s;
+    }
+
+    @keyframes lds-spinner {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+}
+

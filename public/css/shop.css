@@ -1,0 +1,281 @@
+@font-face {
+  font-family: BerlinSanBold;
+  src: url("../font/Berlin Sans FB Demi Bold/BerlinSansFBDemiBold.ttf"); }
+@font-face {
+  font-family: MontserratRegular;
+  src: url("../font/Montserrat/Montserrat-Regular.ttf"); }
+@font-face {
+  font-family: MontserratSemiBold;
+  src: url("../font/Montserrat/Montserrat-SemiBold.ttf"); }
+html {
+  scroll-behavior: smooth; }
+
+.modal-backdrop {
+  background-color: #000000a3 !important; }
+  .modal-backdrop .here-pop {
+    display: block;
+    z-index: 9999;
+    position: absolute;
+    top: 100px;
+    left: 30%;
+    background: #fff;
+    width: 600px;
+    height: 250px;
+    padding: 30px 30px 30px 30px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 2px #1c1919; }
+    @media all and (max-width: 768px) {
+      .modal-backdrop .here-pop {
+        width: 90%;
+        height: unset;
+        margin: auto;
+        left: 5%; } }
+    .modal-backdrop .here-pop .title {
+      color: #652528;
+      font-size: 18px;
+      font-family: MontserratRegular;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #dddddd; }
+    .modal-backdrop .here-pop ul {
+      padding-inline-start: 18px;
+      margin-bottom: 0px !important; }
+      .modal-backdrop .here-pop ul li {
+        font-size: 14px;
+        margin-bottom: 17px; }
+        .modal-backdrop .here-pop ul li::marker {
+          color: #652528; }
+        .modal-backdrop .here-pop ul li .y {
+          color: #9B3734;
+          font-weight: 600; }
+    .modal-backdrop .here-pop .hide-pop {
+      position: absolute;
+      right: -18px;
+      top: -18px;
+      width: 35px;
+      height: 35px;
+      display: block;
+      background: #9B3734;
+      text-align: center;
+      border-radius: 50%;
+      color: #fff;
+      border: 3px solid #0000007a;
+      box-sizing: content-box; }
+      .modal-backdrop .here-pop .hide-pop svg {
+        margin-top: 11px; }
+
+#main {
+  font-family: MontserratRegular; }
+  #main .title {
+    font-family: BerlinSanBold;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+    margin-top: 65px;
+    -webkit-text-stroke: 3px #CD5907;
+    -webkit-text-fill-color: white;
+    -webkit-animation: fill 0.5s infinite alternate; }
+  #main .outer-filter .filter-x {
+    color: #FDE033;
+    border: 1px solid #9B3734;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 27px;
+    width: 120px;
+    height: 45px;
+    display: block;
+    text-decoration: none;
+    text-align: center; }
+    #main .outer-filter .filter-x img {
+      margin-right: 7px; }
+  #main .outer-filter .filter-y {
+    color: #FDE033;
+    border: 1px solid #9B3734;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 27px;
+    width: 87px;
+    height: 40px;
+    display: block;
+    text-decoration: none;
+    text-align: center; }
+    #main .outer-filter .filter-y i {
+      margin-left: 3px; }
+  #main .outer-filter .filter {
+    display: none;
+    font-size: 14px;
+    color: #fff;
+    padding-bottom: 20px;
+    font-family: Montserrat; }
+  #main .outer-filter .item a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 14px;
+    display: inline-block; }
+  #main .outer-filter .all {
+    padding: 5px 10px;
+    font-size: 14px;
+    background: #9B3734;
+    border: 0;
+    border-radius: 5px;
+    color: #FDE033;
+    text-decoration: none; }
+  #main .outer-filter .col-md-2 {
+    flex: 0 0 13.666667%;
+    max-width: 13.666667%; }
+  #main .outer-filter .col-md-8 {
+    flex: 0 0 70.666667%;
+    max-width: 70.666667%; }
+  #main .outer-filter .col-md-1 {
+    flex: 0 0 7.333333%;
+    max-width: 7.333333%; }
+    #main .outer-filter .col-md-1 .fa-angle-down {
+      color: #FDE033; }
+    #main .outer-filter .col-md-1 span {
+      float: right; }
+  #main .outer-prd .item {
+    color: #fff;
+    max-width: 315px;
+    margin: 0px auto 45px; }
+    #main .outer-prd .item .box_img {
+      background: url("../images/shoppage/bg-item.svg") center center no-repeat;
+      height: 247px;
+      width: 270px;
+      margin: auto;
+      display: -webkit-box; }
+      #main .outer-prd .item .box_img img {
+        width: 216px;
+        height: 194px;
+        margin-left: 25px;
+        margin-top: 25px;
+        object-fit: contain;
+        overflow: hidden; }
+    #main .outer-prd .item .price {
+      display: flex;
+      margin-bottom: 10px; }
+      #main .outer-prd .item .price .text {
+        width: 50%;
+        float: left;
+        text-align: left; }
+      #main .outer-prd .item .price .right-price img {
+        display: unset;
+        width: 20px;
+        height: 20px;
+        margin-right: 20px; }
+      #main .outer-prd .item .price .right-price p {
+        text-align: right;
+        margin-bottom: 0; }
+    #main .outer-prd .item .name {
+      font-family: Montserrat;
+      font-size: 16px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      text-align: left; }
+    #main .outer-prd .item .role {
+      font-size: 14px;
+      text-transform: uppercase; }
+    #main .outer-prd .item .buyBtn {
+      position: relative;
+      margin-right: 20px; }
+      #main .outer-prd .item .buyBtn:hover .line-x {
+        left: calc(100% - 54px); }
+      #main .outer-prd .item .buyBtn:hover span {
+        color: red; }
+      #main .outer-prd .item .buyBtn:hover img:hover {
+        /* Start the shake animation and make the animation last for 0.5 seconds */
+        animation: shake 0.7s;
+        /* When the animation is finished, start again */
+        animation-iteration-count: infinite; }
+      #main .outer-prd .item .buyBtn:hover span:hover {
+        /* Start the shake animation and make the animation last for 0.5 seconds */
+        animation: shake 0.7s;
+        /* When the animation is finished, start again */
+        animation-iteration-count: infinite; }
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg); }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg); }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg); }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg); }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg); }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg); }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg); }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg); }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg); }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg); }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg); } }
+      #main .outer-prd .item .buyBtn span {
+        position: absolute;
+        left: 37px;
+        top: 0px;
+        z-index: 99999;
+        font-weight: 600;
+        color: #fff;
+        text-transform: uppercase; }
+      #main .outer-prd .item .buyBtn .line-x {
+        position: absolute;
+        left: 0px;
+        top: -7px;
+        transition: 0.8s; }
+  #main .outer-spiner {
+    text-align: center;
+    margin: 60px auto 30px; }
+    #main .outer-spiner .lds-spinner {
+      color: official;
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      height: 80px; }
+    #main .outer-spiner .lds-spinner div {
+      transform-origin: 40px 40px;
+      animation: lds-spinner 1.2s linear infinite; }
+    #main .outer-spiner .lds-spinner div:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 39px;
+      width: 2px;
+      height: 22px;
+      border-radius: 20%;
+      background: #fff; }
+    #main .outer-spiner .lds-spinner div:nth-child(1) {
+      transform: rotate(0deg);
+      animation-delay: -1.2s; }
+    #main .outer-spiner .lds-spinner div:nth-child(2) {
+      transform: rotate(60deg);
+      animation-delay: -1s; }
+    #main .outer-spiner .lds-spinner div:nth-child(3) {
+      transform: rotate(120deg);
+      animation-delay: -0.8s; }
+    #main .outer-spiner .lds-spinner div:nth-child(4) {
+      transform: rotate(180deg);
+      animation-delay: -0.6s; }
+    #main .outer-spiner .lds-spinner div:nth-child(5) {
+      transform: rotate(240deg);
+      animation-delay: -0.4s; }
+    #main .outer-spiner .lds-spinner div:nth-child(6) {
+      transform: rotate(300deg);
+      animation-delay: -0.2s; }
+@keyframes lds-spinner {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+/*# sourceMappingURL=shop.css.map */
