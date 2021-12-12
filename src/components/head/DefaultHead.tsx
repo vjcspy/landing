@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import React from 'react';
 import Head from 'next/head'
 import Script from 'next/script'
@@ -26,7 +27,7 @@ const DefaultHead = React.memo<any>(() => {
             <Script src="js/aos.js" type="text/javascript"/>
             <Script src="js/templates.js" type="text/javascript"/>
             <Script src="js/csi.min.js" type="text/javascript"/>
-            <Script src="js/owl.carousel.min.js" type="text/javascript"/>
+            {/*<script src="js/owl.carousel.js" type="text/javascript"/>*/}
 
             <Script src="https://unpkg.com/swiper/swiper-bundle.min.js"/>
             <Script src="https://unpkg.com/swiper/swiper-bundle.js"/>

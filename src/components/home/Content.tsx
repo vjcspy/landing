@@ -1,8 +1,10 @@
 import React, {useEffect} from 'react';
 import HomeHeader from "@components/home/HomeHeader";
-import HomeMain from "@components/home/HomeMain";
 import HomeHeaderMobile from "@components/home/HomeHeaderMobile";
 import HomeFooter from "@components/home/HomeFooter";
+import dynamic from "next/dynamic";
+
+const DynamicComponent = dynamic(() => import('@components/home/HomeMain'), {ssr: false})
 
 const Content = React.memo(() => {
     useEffect(() => {
@@ -32,7 +34,7 @@ const Content = React.memo(() => {
     }, [])
     return <div className="wrapper" id="wrapper">
         <HomeHeader/>
-        <HomeMain/>
+        <DynamicComponent/>
         <HomeHeaderMobile/>
         <HomeFooter/>
     </div>

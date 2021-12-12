@@ -1,7 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, {useCallback, useEffect} from 'react';
+import Script from 'next/script'
 
+let first = true;
+if (typeof window !== 'undefined') {
+    // @ts-ignore
+    window.jQuery1 = jQuery;
+    // @ts-ignore
+    window.jQuery = jQuery;
+    // @ts-ignore
+    window.abc = '123';
+    first = false;
+}
 const HomeMain = React.memo((props) => {
+
     const loadCharacter1 = useCallback(() => {
         $('.character-1').show();
         $('.item').removeClass('active');
@@ -38,14 +50,131 @@ const HomeMain = React.memo((props) => {
         $('.show-5').addClass('active');
     }, []);
 
-    useEffect(()=>{
+    useEffect(() => {
         $(document).ready(function () {
             loadCharacter1();
 
+            setTimeout(()=>{
+
+                // @ts-ignore
+                window.jQuery1('.character-img').owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 1
+                        },
+                        1000: {
+                            items: 1
+                        }
+                    }
+                });
+
+                // @ts-ignore
+                window.jQuery1('#list-members').owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+//        dots:true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 1
+                        },
+                        1000: {
+                            items: 4
+                        }
+                    }
+                })
+
+                // @ts-ignore
+                window.jQuery1('#list-partners').owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+//        dots:true,
+                    responsive: {
+                        0: {
+                            items: 2
+                        },
+                        600: {
+                            items: 2
+                        },
+                        1000: {
+                            items: 4
+                        }
+                    }
+                });
+
+                // @ts-ignore
+                window.jQuery1('#list-shops').owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+//        dots:true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 1
+                        },
+                        1000: {
+                            items: 4
+                        }
+                    }
+                });
+
+                // @ts-ignore
+                window.jQuery1('#list-news').owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+//        dots:true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 1
+                        },
+                        1000: {
+                            items: 4
+                        }
+                    }
+                });
+
+                // @ts-ignore
+                window.jQuery1('.story_mobile_carousel').owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+//        dots:true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 1
+                        },
+                        1000: {
+                            items: 4
+                        }
+                    }
+                });
+
+            },2000)
         });
-    },[])
+    }, [])
 
     return <div id="main">
+        <Script async={false} type="text/javascript" src='js/owl.carousel.js'/>
         <section className="block story" id="story">
             <div className="outer-flip">
                 <div className="container" style={{position: "relative"}}>

@@ -16,7 +16,7 @@
  * @todo stagePadding calculate wrong active classes
  */
 ;(function($, window, document, undefined) {
-
+	console.log($);
 	/**
 	 * Creates a carousel.
 	 * @class The Owl Carousel.
@@ -1349,7 +1349,7 @@
 		this._items = [];
 
 		if (content) {
-			content = (content instanceof jQuery) ? content : $(content);
+			// content = (content instanceof jQuery) ? content : $(content);
 		}
 
 		if (this.settings.nestedItemSelector) {
@@ -1752,7 +1752,7 @@
 	 */
 	$.fn.owlCarousel.Constructor = Owl;
 
-})(window.Zepto || window.jQuery, window, document);
+})(window.Zepto || window.jQuery1, window, document);
 
 /**
  * AutoRefresh Plugin
@@ -1864,7 +1864,7 @@
 
 	$.fn.owlCarousel.Constructor.Plugins.AutoRefresh = AutoRefresh;
 
-})(window.Zepto || window.jQuery, window, document);
+})(window.Zepto || window.jQuery1, window, document);
 
 /**
  * Lazy Plugin
@@ -2014,7 +2014,7 @@
 
 	$.fn.owlCarousel.Constructor.Plugins.Lazy = Lazy;
 
-})(window.Zepto || window.jQuery, window, document);
+})(window.Zepto || window.jQuery1, window, document);
 
 /**
  * AutoHeight Plugin
@@ -2147,7 +2147,7 @@
 
 	$.fn.owlCarousel.Constructor.Plugins.AutoHeight = AutoHeight;
 
-})(window.Zepto || window.jQuery, window, document);
+})(window.Zepto || window.jQuery1, window, document);
 
 /**
  * Video Plugin
@@ -2475,7 +2475,7 @@
 
 	$.fn.owlCarousel.Constructor.Plugins.Video = Video;
 
-})(window.Zepto || window.jQuery, window, document);
+})(window.Zepto || window.jQuery1, window, document);
 
 /**
  * Animate Plugin
@@ -2597,7 +2597,7 @@
 
 	$.fn.owlCarousel.Constructor.Plugins.Animate = Animate;
 
-})(window.Zepto || window.jQuery, window, document);
+})(window.Zepto || window.jQuery1, window, document);
 
 /**
  * Autoplay Plugin
@@ -2831,7 +2831,7 @@
 
 	$.fn.owlCarousel.Constructor.Plugins.autoplay = Autoplay;
 
-})(window.Zepto || window.jQuery, window, document);
+})(window.Zepto || window.jQuery1, window, document);
 
 /**
  * Navigation Plugin
@@ -3238,7 +3238,7 @@
 
 	$.fn.owlCarousel.Constructor.Plugins.Navigation = Navigation;
 
-})(window.Zepto || window.jQuery, window, document);
+})(window.Zepto || window.jQuery1, window, document);
 
 /**
  * Hash Plugin
@@ -3361,7 +3361,7 @@
 
 	$.fn.owlCarousel.Constructor.Plugins.Hash = Hash;
 
-})(window.Zepto || window.jQuery, window, document);
+})(window.Zepto || window.jQuery1, window, document);
 
 /**
  * Support Plugin
@@ -3445,4 +3445,4 @@
 		$.support.transform3d = tests.csstransforms3d();
 	}
 
-})(window.Zepto || window.jQuery, window, document);
+})(window.jQuery1, window, document);
