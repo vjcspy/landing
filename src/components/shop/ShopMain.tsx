@@ -72,10 +72,6 @@ const ShopMain = React.memo<{
                             <div className="item">
                                 <div className="box_img">
                                     <img src="images/shop/Rectangle%2016.png" alt=""/>
-                                    <div className="top-right">
-                                        <img src="images/shoppage/best-buy.svg" alt=""/>
-                                        <span>Best Buy</span>
-                                    </div>
                                 </div>
 
                                 <p className="name">Melos AI Music X D • Power...</p>
