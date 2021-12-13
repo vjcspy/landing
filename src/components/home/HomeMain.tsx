@@ -2,6 +2,16 @@
 import React, {useCallback, useEffect} from 'react';
 var currentStoryPoint = 1;
 var totalStoryPoint = 5;
+let first = true;
+if (typeof window !== 'undefined') {
+    // @ts-ignore
+    window.jQuery1 = jQuery;
+    // @ts-ignore
+    window.jQuery = jQuery;
+    // @ts-ignore
+    window.abc = '123';
+    first = false;
+}
 const HomeMain = React.memo((props) => {
 
     const loadCharacter1 = useCallback(() => {
@@ -122,6 +132,25 @@ const HomeMain = React.memo((props) => {
                 });
 
                 // @ts-ignore
+                window.jQuery1('.list-partners-mobile').owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+//        dots:true,
+                    responsive: {
+                        0: {
+                            items: 2
+                        },
+                        600: {
+                            items: 2
+                        },
+                        1000: {
+                            items: 2
+                        }
+                    }
+                });
+
+                // @ts-ignore
                 window.jQuery1('#list-shops').owlCarousel({
                     loop: true,
                     margin: 10,
@@ -208,9 +237,7 @@ const HomeMain = React.memo((props) => {
                     page = ($(this).parent().index() + 1 ) * 2;
                 }
                 page = page % 2 == 0 ? page : page + 1;
-                console.log(page);
                 currentStoryPoint = page/2;
-                console.log(currentStoryPoint);
                 // @ts-ignore
                 $("#book").turn('page', page);
                 console.log("turnpage success");
@@ -917,7 +944,7 @@ const HomeMain = React.memo((props) => {
                     <div className="row show show-1 hidden">
                         <div className="col-md-6" data-aos="fade-down-right" data-aos-duration="2000">
                             <div className="box-title">
-                                <p className="title">Assasin</p>
+                                <p className="title">Assassin</p>
                                 <a className="collapse-char">Collapse</a>
                             </div>
                             <div className="hidden-mobile">
@@ -969,7 +996,7 @@ const HomeMain = React.memo((props) => {
                     <div className="row show show-2 hidden">
                         <div className="col-md-6">
                             <div className="box-title" data-aos="fade-left">
-                                <p className="title">Archer</p>
+                                <p className="title">Ranger</p>
                                 <a className="collapse-char">Collapse</a>
                             </div>
                             <div className="hidden-mobile" data-aos="fade-left">
@@ -1073,7 +1100,7 @@ const HomeMain = React.memo((props) => {
                     <div className="row show show-4 hidden">
                         <div className="col-md-6">
                             <div className="box-title">
-                                <p className="title">Knight</p>
+                                <p className="title">Paladin</p>
                                 <a className="collapse-char">Collapse</a>
                             </div>
                             <div className="hidden-mobile">
@@ -1126,7 +1153,7 @@ const HomeMain = React.memo((props) => {
                     <div className="row show show-5 hidden">
                         <div className="col-md-6">
                             <div className="box-title">
-                                <p className="title">Soccerer</p>
+                                <p className="title">Sorcerer</p>
                                 <a className="collapse-char">Collapse</a>
                             </div>
                             <div className="hidden-mobile">
@@ -1228,27 +1255,24 @@ const HomeMain = React.memo((props) => {
                     <div className="item" data-aos="fade-up" data-aos-offset="0"
                          data-aos-duration="500">
                         <div className="shield">
-                            <p>Q2 - Q3 <br/>
+                            <p>Q4 <br/>
                                 /2021</p>
                         </div>
                         <div className="mid">
 
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a lacus aenean pulvinar
-                            euismod
-                            proin.</p>
+                        <p>Game and Smart Contract development</p>
+                        <p>Seed Funding</p>
                     </div>
                     <div className="item" data-aos="fade-up" data-aos-offset="0"
                          data-aos-duration="1000">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a lacus aenean pulvinar
-                            euismod
-                            proin.</p>
+                        <p>Private Sale</p>
                         <div className="mid mid2">
 
                         </div>
                         <div className="shield">
-                            <p>Q4 <br/>
-                                /2021</p>
+                            <p>Q1 <br/>
+                                /2022</p>
                         </div>
                     </div>
                     <div className="item" data-aos="fade-up"
@@ -1375,6 +1399,24 @@ const HomeMain = React.memo((props) => {
                         <img src="images/partner/p2.png" alt=""/>
                     </div>
 
+                </div>
+                <div id="list-partners-mobile" className="list-partners-mobile owl-carousel owl-theme">
+                    <div className="item">
+                        <img src="images/partner/p1.png" alt=""/>
+                            <img src="images/partner/p2.png" alt=""/>
+                                <img src="images/partner/p3.png" alt=""/>
+                                    <img src="images/partner/p4.png" alt=""/>
+                                        <img src="images/partner/p5.png" alt=""/>
+                                            <img src="images/partner/p6.png" alt=""/>
+                    </div>
+                    <div className="item">
+                        <img src="images/partner/p1.png" alt=""/>
+                            <img src="images/partner/p2.png" alt=""/>
+                                <img src="images/partner/p3.png" alt=""/>
+                                    <img src="images/partner/p4.png" alt=""/>
+                                        <img src="images/partner/p5.png" alt=""/>
+                                            <img src="images/partner/p6.png" alt=""/>
+                    </div>
                 </div>
             </div>
         </section>

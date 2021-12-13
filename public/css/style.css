@@ -13,8 +13,9 @@ html {
 
 body .container {
   width: 1230px; }
-  @media all and (max-width: 1229px) {
+  @media all and (max-width: 1400px) {
     body .container {
+      zoom: 0.75;
       width: 100%; } }
 body #main {
   font-family: MontserratRegular, sans-serif !important; }
@@ -147,14 +148,14 @@ body img {
     color: #fff;
     text-align: center;
     margin-bottom: 20px;
-    -webkit-text-stroke: 4px #CD5907;
+    -webkit-text-stroke: 2px #CD5907;
     -webkit-text-fill-color: white;
     -webkit-animation: fill 0.5s infinite alternate; }
   .wrapper .story {
     background: url("../images/flipbook/bg.png") center center no-repeat, #652528;
     background-size: 100% 100%;
-    height: 900px;
-    padding-top: 95px;
+    height: 100vh;
+    padding-top: 70px;
     overflow: hidden; }
     .wrapper .story .outer-flip {
       /* Áp dụng animation vào phần tử */ }
@@ -211,28 +212,28 @@ body img {
         position: absolute;
         border: 0px;
         bottom: 0px;
-        right: -200px;
+        right: -275px;
         z-index: 999;
-        padding: 30px 30px 0px 30px; }
+        padding: 30px 0px 0px 28px; }
         @media all and (max-width: 768px) {
           .wrapper .story .outer-flip .male {
             display: none; } }
         @media all and (min-width: 1600px) {
           .wrapper .story .outer-flip .male {
-            right: -200px; } }
+            right: -250px; } }
       .wrapper .story .outer-flip .female {
         position: absolute;
         border: 0px;
         z-index: 999;
         bottom: 0px;
-        left: -200px;
+        left: -250px;
         padding: 30px 30px 0px 30px; }
         @media all and (max-width: 768px) {
           .wrapper .story .outer-flip .female {
             display: none; } }
         @media all and (min-width: 1600px) {
           .wrapper .story .outer-flip .female {
-            left: -200px; } }
+            left: -250px; } }
       .wrapper .story .outer-flip .anhsang-fm {
         position: absolute;
         top: -83px;
@@ -360,7 +361,7 @@ body img {
   .wrapper .teaser {
     background: url("../images/teaser/big-bg.png") center center no-repeat, #652528;
     background-size: 100% 100%;
-    height: 900px;
+    height: 100vh;
     padding-top: 100px;
     position: relative;
     overflow: hidden; }
@@ -392,9 +393,9 @@ body img {
         height: auto;
         margin: auto; }
   .wrapper .character {
-    background: #652528;
-    padding-top: 60px;
-    height: 900px;
+    background: #692a39;
+    padding-top: 90px;
+    height: 100vh;
     overflow: hidden; }
     .wrapper .character .title-ch {
       font-family: BerlinSanBold;
@@ -404,7 +405,7 @@ body img {
       color: #fff;
       text-align: center;
       margin-bottom: 20px;
-      -webkit-text-stroke: 4px #CD5907;
+      -webkit-text-stroke: 2px #CD5907;
       -webkit-text-fill-color: white;
       -webkit-animation: fill 0.5s infinite alternate; }
     .wrapper .character .row-character {
@@ -472,8 +473,8 @@ body img {
         background: url("../images/skill/right.png") center center no-repeat;
         background-size: 38px;
         position: absolute;
-        right: 0px;
-        bottom: 0px;
+        right: -58px;
+        bottom: 50px;
         outline: none;
         border: none; }
         .wrapper .character .owl-nav .owl-next span {
@@ -486,8 +487,8 @@ body img {
         background: url("../images/skill/left.png") center center no-repeat;
         background-size: 38px;
         position: absolute;
-        left: 0px;
-        bottom: 0px;
+        left: -58px;
+        bottom: 50px;
         outline: none;
         border: none; }
         .wrapper .character .owl-nav .owl-prev span {
@@ -499,8 +500,8 @@ body img {
   .wrapper .exchange {
     background: url("../images/exchange/bg.png") center center no-repeat;
     background-size: 100% 100%;
-    height: 900px;
-    padding-top: 60px;
+    height: 100vh;
+    padding-top: 80px;
     overflow: hidden; }
     .wrapper .exchange .left {
       margin-top: 30px; }
@@ -580,8 +581,8 @@ body img {
   .wrapper .roadmap {
     background: url("../images/roadmap/Group 7843.png") center center no-repeat;
     background-size: 100% 100%;
-    height: 900px;
-    padding-top: 50px;
+    height: 100vh;
+    padding-top: 90px;
     position: relative;
     overflow: hidden; }
     .wrapper .roadmap .title-ch {
@@ -591,14 +592,15 @@ body img {
       font-weight: 600;
       color: #fff;
       text-align: center;
-      margin-bottom: 20px;
-      -webkit-text-stroke: 4px #CD5907;
+      margin-bottom: 0px;
+      margin-top: 105px;
+      -webkit-text-stroke: 2px #CD5907;
       -webkit-text-fill-color: white;
       -webkit-animation: fill 0.5s infinite alternate; }
     .wrapper .roadmap .grid-item {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      margin-top: 150px; }
+      margin-top: 65px; }
       .wrapper .roadmap .grid-item .item {
         width: 200px;
         text-align: center; }
@@ -644,16 +646,16 @@ body img {
     .wrapper .roadmap .line {
       background: url("../images/roadmap/line.png") center center no-repeat;
       position: absolute;
-      top: 450px;
+      top: 510px;
       left: 0;
       width: 100%;
       height: 5px; }
   .wrapper .team {
-    background: url("../images/team/Group 7849 (1).png") center center no-repeat, #652528;
+    background: url("../images/team/Group 7849 (1).png") center center no-repeat, #692a39;
     background-size: 100% 100%;
     background-blend-mode: multiply;
-    height: 900px;
-    padding-top: 50px;
+    height: 100vh;
+    padding-top: 100px;
     overflow: hidden; }
     .wrapper .team .title-ch {
       font-family: BerlinSanBold;
@@ -663,7 +665,7 @@ body img {
       color: #fff;
       text-align: center;
       margin-bottom: 20px;
-      -webkit-text-stroke: 4px #CD5907;
+      -webkit-text-stroke: 2px #CD5907;
       -webkit-text-fill-color: white;
       -webkit-animation: fill 0.5s infinite alternate; }
     .wrapper .team .white-paper {
@@ -750,7 +752,7 @@ body img {
     background: url("../images/partner/Rectangle 552.png") center center no-repeat, #652528;
     background-size: 100% 100%;
     background-blend-mode: overlay;
-    height: 900px;
+    height: 100vh;
     padding-top: 95px;
     overflow: hidden; }
     .wrapper .partner .title-ch {
@@ -760,7 +762,8 @@ body img {
       font-weight: 600;
       color: #fff;
       text-align: center;
-      margin-bottom: 90px;
+      margin-top: 70px;
+      margin-bottom: 30px;
       -webkit-text-stroke: 2px #fff;
       -webkit-text-fill-color: #652528;
       -webkit-animation: fill 0.5s infinite alternate; }
@@ -845,6 +848,8 @@ body img {
         .wrapper .partner .list-partners .owl-dots .active span {
           background: yellow;
           border: 2px solid yellow; }
+    .wrapper .partner .list-partners-mobile {
+      display: none; }
   .wrapper .shop, .wrapper .news {
     padding-top: 60px;
     overflow: hidden; }
@@ -856,7 +861,7 @@ body img {
         background: url("../images/shop/bg-item.png") center center no-repeat;
         height: 247px;
         width: 270px;
-        display: -webkit-box; }
+        display: flex; }
         .wrapper .shop .list-shops .item .box_img img, .wrapper .news .list-shops .item .box_img img {
           width: 180px;
           height: 160px;
@@ -893,7 +898,7 @@ body img {
         background: url("../images/skill/right.png") center center no-repeat;
         background-size: 38px;
         position: absolute;
-        right: -30px !important;
+        right: -50px !important;
         top: 27%;
         outline: none;
         border: none; }
@@ -910,7 +915,7 @@ body img {
         background: url("../images/skill/left.png") center center no-repeat;
         background-size: 38px;
         position: absolute;
-        left: -30px !important;
+        left: -50px !important;
         top: 27%;
         outline: none;
         border: none; }
@@ -948,8 +953,10 @@ body img {
         border: 2px solid yellow; }
   .wrapper .news {
     padding-bottom: 40px;
-    padding-top: 20px;
     overflow: hidden; }
+    @media all and (min-width: 769px) {
+      .wrapper .news {
+        padding-top: 100px; } }
     .wrapper .news .title-ch {
       line-height: 40px; }
     .wrapper .news .title {
@@ -1148,16 +1155,18 @@ body img {
     .wrapper .story .story_mobile {
       display: block !important; }
       .wrapper .story .story_mobile .owl-carousel {
-        height: 688px !important; }
+        height: 700px !important; }
       .wrapper .story .story_mobile .item .odd {
-        background: url(../images/Page-right.png) center center no-repeat;
+        background: url(../images/flipbook/Untitled-1.png) center center no-repeat;
         background-size: 100% 100%; }
       .wrapper .story .story_mobile .item .add {
-        background: url(../images/Page.png) center center no-repeat;
+        background: url(../images/flipbook/Untitled-1.png) center center no-repeat;
         background-size: 100% 100%; }
       .wrapper .story .story_mobile .item .page {
         min-height: 600px;
-        padding: 0px 30px; }
+        padding: 30px 40px 20px; }
+        .wrapper .story .story_mobile .item .page ul li {
+          font-size: 13px; }
         .wrapper .story .story_mobile .item .page p {
           font-size: 13px;
           margin-bottom: 8px;
@@ -1167,7 +1176,8 @@ body img {
           font-weight: 900;
           font-family: BerlinSanBold;
           text-align: center !important;
-          padding-top: 60px; }
+          padding-top: 60px;
+          margin-bottom: 30px; }
         .wrapper .story .story_mobile .item .page .chap {
           font-weight: 600; }
         .wrapper .story .story_mobile .item .page .text {
@@ -1227,8 +1237,7 @@ body img {
         width: 100%;
         padding: 0px 10px; }
   .wrapper .character {
-    height: unset;
-    padding-bottom: 80px; }
+    height: unset; }
     .wrapper .character .title-ch {
       font-size: 24px;
       -webkit-text-stroke: 2px #CD5907; }
@@ -1317,11 +1326,21 @@ body img {
   .wrapper .partner {
     padding-top: 50px;
     padding-bottom: 50px;
-    height: unset; }
+    height: unset;
+    background-size: unset; }
     .wrapper .partner .title-ch {
       margin-bottom: 40px; }
+    .wrapper .partner .list-partners-mobile {
+      display: block; }
+      .wrapper .partner .list-partners-mobile .item {
+        max-width: unset; }
+        .wrapper .partner .list-partners-mobile .item img {
+          padding: 0;
+          margin-bottom: 30px;
+          padding: 15px; }
     .wrapper .partner .list-partners {
-      padding-bottom: 0; }
+      padding-bottom: 0;
+      display: none; }
       .wrapper .partner .list-partners .item {
         max-width: unset; }
         .wrapper .partner .list-partners .item img {

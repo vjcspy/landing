@@ -24,14 +24,14 @@ const Content = React.memo(() => {
         }, 2000);
     },[])
     useEffect(() => {
-        $('a[href^="#character"]').click(function () {
-            $('html, body').animate({
-                // @ts-ignore
-                scrollTop: $(`[name="${'character'.substr(1)}"]`).offset().top
-            }, 500);
-
-            return false;
-        });
+        // $('a[href^="#character"]').click(function () {
+        //     $('html, body').animate({
+        //         // @ts-ignore
+        //         scrollTop: $(`[name="${'character'.substr(1)}"]`).offset().top
+        //     }, 500);
+        //
+        //     return false;
+        // });
 
         $('.box-title > a').click(function () {
             var parentTag = $(this).parent();
