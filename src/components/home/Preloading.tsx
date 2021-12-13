@@ -9,7 +9,7 @@ const Preloading = React.memo((props) => {
                         $('.preload-page.hide').hide();
                     }, 2000);
                 });
-            }, 4000);
+            }, 2000);
 
         });
     },[])

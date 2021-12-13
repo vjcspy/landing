@@ -1,60 +1,69 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, {useCallback, useEffect} from 'react';
-import Script from 'next/script'
-
-let first = true;
-if (typeof window !== 'undefined') {
-    // @ts-ignore
-    window.jQuery1 = jQuery;
-    // @ts-ignore
-    window.jQuery = jQuery;
-    // @ts-ignore
-    window.abc = '123';
-    first = false;
-}
+var currentStoryPoint = 1;
+var totalStoryPoint = 5;
 const HomeMain = React.memo((props) => {
 
     const loadCharacter1 = useCallback(() => {
         $('.character-1').show();
-        $('.item').removeClass('active');
+        $('.item-ch').removeClass('active');
         $('.item1').addClass('active');
         $('.show').removeClass('active');
         $('.show-1').addClass('active');
     }, []);
     const loadCharacter2 = useCallback(() => {
         $('.character-1').show();
-        $('.item').removeClass('active');
+        $('.item-ch').removeClass('active');
         $('.item2').addClass('active');
         $('.show').removeClass('active');
         $('.show-2').addClass('active');
     }, []);
     const loadCharacter3 = useCallback(() => {
         $('.character-1').show();
-        $('.item').removeClass('active');
+        $('.item-ch').removeClass('active');
         $('.item3').addClass('active');
         $('.show').removeClass('active');
         $('.show-3').addClass('active');
     }, []);
     const loadCharacter4 = useCallback(() => {
         $('.character-1').show();
-        $('.item').removeClass('active');
+        $('.item-ch').removeClass('active');
         $('.item4').addClass('active');
         $('.show').removeClass('active');
         $('.show-4').addClass('active');
     }, []);
     const loadCharacter5 = useCallback(() => {
         $('.character-1').show();
-        $('.item').removeClass('active');
+        $('.item-ch').removeClass('active');
         $('.item5').addClass('active');
         $('.show').removeClass('active');
         $('.show-5').addClass('active');
     }, []);
 
+    const previousStory = useCallback(() => {
+        currentStoryPoint++;
+        if(currentStoryPoint>totalStoryPoint)
+        {
+            currentStoryPoint = 5;
+        }
+        $("#ulStory li").removeClass("is-active");
+        $("#liStory"+ currentStoryPoint).addClass("is-active");
+    }, [])
+    const nextStory = useCallback(() => {
+        currentStoryPoint--;
+        if(currentStoryPoint<1)
+        {
+            currentStoryPoint = 1;
+        }
+        $("#ulStory li").removeClass("is-active");
+        $("#liStory"+ currentStoryPoint).addClass("is-active");
+    }, [])
+
     useEffect(() => {
         $(document).ready(function () {
             loadCharacter1();
 
-            setTimeout(()=>{
+            setTimeout(() => {
 
                 // @ts-ignore
                 window.jQuery1('.character-img').owlCarousel({
@@ -151,6 +160,25 @@ const HomeMain = React.memo((props) => {
                 });
 
                 // @ts-ignore
+                window.jQuery1('.row-character').owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+//        dots:true,
+                    responsive: {
+                        0: {
+                            items: 3
+                        },
+                        600: {
+                            items: 3
+                        },
+                        1000: {
+                            items: 5
+                        }
+                    }
+                });
+
+                // @ts-ignore
                 window.jQuery1('.story_mobile_carousel').owlCarousel({
                     loop: true,
                     margin: 10,
@@ -169,16 +197,116 @@ const HomeMain = React.memo((props) => {
                     }
                 });
 
-            },2000)
+            }, 2000)
+
+            $(".pagination-slide li>a").click(function (e) {
+                e.preventDefault();
+                $('.pagination-slide li').removeClass("is-active");
+                $(this).parent().addClass("is-active");
+                var page = ($(this).parent().index() + 1 );
+                if (page > 1) {
+                    page = ($(this).parent().index() + 1 ) * 2;
+                }
+                page = page % 2 == 0 ? page : page + 1;
+                console.log(page);
+                currentStoryPoint = page/2;
+                console.log(currentStoryPoint);
+                // @ts-ignore
+                $("#book").turn('page', page);
+                console.log("turnpage success");
+            });
+
+            (function () {
+                'use strict';
+
+                var module = {
+                    ratio: 1,
+                    init: function (id:any) {
+                        var me = this;
+
+                        // if older browser then don't run javascript
+                        // @ts-ignore
+                        if (document.addEventListener) {
+                            // @ts-ignore
+                            this.el = document.getElementById(id);
+                            this.resize();
+                            this.plugins();
+
+                            // on window resize, update the plugin size
+                            window.addEventListener('resize', function (e) {
+                                var size = me.resize();
+                                // @ts-ignore
+                                $(me.el).turn('size', size.width, size.height);
+                            });
+                        }
+                    },
+                    // @ts-ignore
+                    resize: function () {
+                        // reset the width and height to the css defaults
+                        // @ts-ignore
+                        this.el.style.width = '';
+                        // @ts-ignore
+                        this.el.style.height = '';
+                        // @ts-ignore
+                        var width = this.el.clientWidth,
+                            height = Math.round(width / this.ratio),
+                            padded = Math.round(document.body.clientHeight * 0.8);
+
+                        // if the height is too big for the window, constrain it
+                        if (height > padded) {
+                            height = padded;
+                            width = Math.round(height * this.ratio);
+                        }
+
+                        // set the width and height matching the aspect ratio
+                        // @ts-ignore
+                        this.el.style.width = 940 + 'px';
+                        // @ts-ignore
+                        this.el.style.height = 580 + 'px';
+
+                        return {
+                            width: width,
+                            height: height
+                        };
+                    },
+                    plugins: function () {
+                        // run the plugin
+                        // @ts-ignore
+                        $(this.el).turn({
+                            gradients: true,
+                            acceleration: true
+                        });
+                        // hide the body overflow
+                        document.body.className = 'hide-overflow';
+                    }
+                };
+
+
+                $('.previous').on('click', function () {
+                    // @ts-ignore
+                    $("#book").turn("previous");
+                });
+
+
+                $('.next').on('click', function () {
+                    // @ts-ignore
+                    $("#book").turn("next");
+                });
+
+
+                module.init('book');
+
+            }());
+
+
         });
     }, [])
 
     return <div id="main">
-        <Script async={false} type="text/javascript" src='js/owl.carousel.js'/>
         <section className="block story" id="story">
             <div className="outer-flip">
                 <div className="container" style={{position: "relative"}}>
-                    <div className="try">
+                    <div className="try" data-aos="zoom-in" data-aos-duration="2000">
                         <div className="t">
                             <div className="tc rel">
                                 <div className="book" id="book">
@@ -262,7 +390,7 @@ const HomeMain = React.memo((props) => {
                                         <p className="title-lv2">
                                             <b>Classes & Elements</b>
                                         </p>
-                                        <p className="">The Hunter-verse's elite Hunters will be divided into 5 classes:
+                                        <p className="">The Hunterverse's elite Hunters will be divided into 5 classes:
                                             Barbarian,
                                             Paladin, Assassin, Ranger, and Sorcerer. Combined with 5 magic elements:
                                             Earth, Water, Fire, Light, and Dark.
@@ -461,22 +589,23 @@ const HomeMain = React.memo((props) => {
                     </div>
                     <div className="align-content-center">
                         <div className="indicator">
-                            <div className="previous button"/>
+                            <div className="previous button" onClick={previousStory}></div>
                             <div className="pagination-slide">
-                                <ul>
-                                    <li className="is-active"><a
-                                        className="pagination-aspo-flipbook"/></li>
-                                    <li className=""><a
-                                        className="pagination-aspo-flipbook"/></li>
-                                    <li className=""><a
-                                        className="pagination-aspo-flipbook"/></li>
-                                    <li className=""><a
-                                        className="pagination-aspo-flipbook"/></li>
-                                    <li className=""><a
-                                        className="pagination-aspo-flipbook"/></li>
+                                <ul id="ulStory">
+                                    <li className="is-active" id="liStory1"><a
+                                        className="pagination-aspo-flipbook"></a>
+                                    </li>
+                                    <li className="" id="liStory2"><a
+                                        className="pagination-aspo-flipbook"></a></li>
+                                    <li className="" id="liStory3"><a
+                                        className="pagination-aspo-flipbook"></a></li>
+                                    <li className="" id="liStory4"><a
+                                        className="pagination-aspo-flipbook"></a></li>
+                                    <li className="" id="liStory5"><a
+                                        className="pagination-aspo-flipbook"></a></li>
                                 </ul>
                             </div>
-                            <div className="next button"/>
+                            <div className="next button" onClick={nextStory}></div>
                         </div>
                     </div>
 
@@ -693,7 +822,7 @@ const HomeMain = React.memo((props) => {
                                         completing daily missions and participating in PvE, PvP battles, and
                                         tournaments.</p>
                                     <p>
-                                        Hunter-verse's players can also earn the most valuable reward - HUT tokens in
+                                        Hunterverse's players can also earn the most valuable reward - HUT tokens in
                                         different ways:
                                     </p>
                                     <div className="pd-left">
@@ -737,7 +866,7 @@ const HomeMain = React.memo((props) => {
             </div>
         </section>
         <section className="block teaser" id="#teaser">
-            <div className="container">
+            <div className="container" data-aos="fade-right" data-aos-duration="2000">
                 <p className="title">Video teaser</p>
                 <div className="box-video">
                     <img src="images/teaser/image.png" alt=""/>
@@ -746,40 +875,50 @@ const HomeMain = React.memo((props) => {
         </section>
         <section className="block character" id="character">
             <div className="container">
-                <p className="title-ch">Characters</p>
-                <div className="row-character">
-                    <div className="item item1">
-                        <a onClick={loadCharacter1}>
-                            <img src="images/character/Mask%20Group.png" alt=""/>
-                        </a>
+                <p className="title-ch" data-aos="zoom-in" data-aos-duration="2000">Characters</p>
+                <div className="row-character owl-carousel owl-theme" data-aos="zoom-in" data-aos-duration="2000">
+                    <div className="item">
+                        <div className="item-ch item1">
+                            <a onClick={loadCharacter1}>
+                                <img src="images/character/Mask%20Group.png" alt=""/>
+                            </a>
+                        </div>
                     </div>
-                    <div className="item item2">
-                        <a onClick={loadCharacter2}>
-                            <img src="images/character/Mask%20Group%20(1).png" alt=""/>
-                        </a>
+                    <div className="item">
+                        <div className="item-ch item2">
+                            <a onClick={loadCharacter2}>
+                                <img src="images/character/Mask%20Group%20(1).png" alt=""/>
+                            </a>
+                        </div>
                     </div>
-                    <div className="item item3">
-                        <a onClick={loadCharacter3}>
-                            <img src="images/character/Mask%20Group%20(2).png" alt=""/>
-                        </a>
+                    <div className="item">
+                        <div className="item-ch item3">
+                            <a onClick={loadCharacter3}>
+                                <img src="images/character/Mask%20Group%20(2).png" alt=""/>
+                            </a>
+                        </div>
                     </div>
-                    <div className="item item4">
-                        <a onClick={loadCharacter4}>
-                            <img src="images/character/Mask%20Group%20(3).png" alt=""/>
-                        </a>
+                    <div className="item">
+                        <div className="item-ch item4">
+                            <a onClick={loadCharacter4}>
+                                <img src="images/character/Mask%20Group%20(3).png" alt=""/>
+                            </a>
+                        </div>
                     </div>
-                    <div className="item item5">
-                        <a onClick={loadCharacter5}>
-                            <img src="images/character/Mask%20Group%20(4).png" alt=""/>
-                        </a>
+                    <div className="item">
+                        <div className="item-ch item5">
+                            <a onClick={loadCharacter5}>
+                                <img src="images/character/Mask%20Group%20(4).png" alt=""/>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div className="detail-character">
                     <div className="row show show-1 hidden">
-                        <div className="col-md-6">
+                        <div className="col-md-6" data-aos="fade-down-right" data-aos-duration="2000">
                             <div className="box-title">
                                 <p className="title">Assasin</p>
-                                <a>Xem thông tin</a>
+                                <a className="collapse-char">Collapse</a>
                             </div>
                             <div className="hidden-mobile">
                                 <p className="summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
@@ -807,7 +946,8 @@ const HomeMain = React.memo((props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6" data-aos="fade-down-left" data-aos-duration="2000">
+
                             <div className="hidden character-1">
                                 <div className="character-img owl-carousel owl-theme">
                                     <div className="item">
@@ -828,11 +968,11 @@ const HomeMain = React.memo((props) => {
                     </div>
                     <div className="row show show-2 hidden">
                         <div className="col-md-6">
-                            <div className="box-title">
+                            <div className="box-title" data-aos="fade-left">
                                 <p className="title">Archer</p>
-                                <a>Xem thông tin</a>
+                                <a className="collapse-char">Collapse</a>
                             </div>
-                            <div className="hidden-mobile">
+                            <div className="hidden-mobile" data-aos="fade-left">
                                 <p className="summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
                                     lectus
                                     sit aenean at elit ultricies. Et rhoncus ultricies vitae magna sed eleifend vitae.
@@ -862,15 +1002,15 @@ const HomeMain = React.memo((props) => {
                         <div className="col-md-6">
                             <div className="character-2">
                                 <div className="character-img owl-carousel owl-theme">
-                                    <div className="item">
+                                    <div className="item" data-aos="fade-down-left">
                                         <img src="images/character/Female-Archer1.png" alt=""/>
                                         <img src="images/character/male_archer1.png" alt=""/>
                                     </div>
-                                    <div className="item">
+                                    <div className="item" data-aos="fade-down-left">
                                         <img src="images/character/Female-Archer1.png" alt=""/>
                                         <img src="images/character/male_archer1.png" alt=""/>
                                     </div>
-                                    <div className="item">
+                                    <div className="item" data-aos="fade-down-left">
                                         <img src="images/character/Female-Archer1.png" alt=""/>
                                         <img src="images/character/male_archer1.png" alt=""/>
                                     </div>
@@ -882,7 +1022,7 @@ const HomeMain = React.memo((props) => {
                         <div className="col-md-6">
                             <div className="box-title">
                                 <p className="title">Barbarian</p>
-                                <a>Xem thông tin</a>
+                                <a className="collapse-char">Collapse</a>
                             </div>
                             <div className="hidden-mobile">
                                 <p className="summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
@@ -934,7 +1074,7 @@ const HomeMain = React.memo((props) => {
                         <div className="col-md-6">
                             <div className="box-title">
                                 <p className="title">Knight</p>
-                                <a>Xem thông tin</a>
+                                <a className="collapse-char">Collapse</a>
                             </div>
                             <div className="hidden-mobile">
                                 <p className="summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
@@ -987,7 +1127,7 @@ const HomeMain = React.memo((props) => {
                         <div className="col-md-6">
                             <div className="box-title">
                                 <p className="title">Soccerer</p>
-                                <a>Xem thông tin</a>
+                                <a className="collapse-char">Collapse</a>
                             </div>
                             <div className="hidden-mobile">
                                 <p className="summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
@@ -1042,7 +1182,7 @@ const HomeMain = React.memo((props) => {
         <section className="block exchange">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6" data-aos="fade-right">
                         <div className="left">
                             <p className="title">Exchange your items <br/> with others</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. At imperdiet nulla amet vitae
@@ -1053,7 +1193,7 @@ const HomeMain = React.memo((props) => {
                                 tempus dui faucibus. </p>
                         </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6" data-aos="fade-left">
                         <div className="right">
                             <div className="top">
                                 <div className="box-frame">
@@ -1083,9 +1223,10 @@ const HomeMain = React.memo((props) => {
         <section className="block roadmap" id="roadmap">
             <div className="container">
                 <p className="title-ch">Roadmap</p>
-                <div className="line"/>
+                <div className="line"></div>
                 <div className="grid-item">
-                    <div className="item">
+                    <div className="item" data-aos="fade-up" data-aos-offset="0"
+                         data-aos-duration="500">
                         <div className="shield">
                             <p>Q2 - Q3 <br/>
                                 /2021</p>
@@ -1097,7 +1238,8 @@ const HomeMain = React.memo((props) => {
                             euismod
                             proin.</p>
                     </div>
-                    <div className="item">
+                    <div className="item" data-aos="fade-up" data-aos-offset="0"
+                         data-aos-duration="1000">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a lacus aenean pulvinar
                             euismod
                             proin.</p>
@@ -1109,7 +1251,8 @@ const HomeMain = React.memo((props) => {
                                 /2021</p>
                         </div>
                     </div>
-                    <div className="item">
+                    <div className="item" data-aos="fade-up"
+                         data-aos-duration="1500">
                         <div className="shield">
                             <p>Q2 - Q3 <br/>
                                 /2021</p>
@@ -1121,7 +1264,8 @@ const HomeMain = React.memo((props) => {
                             euismod
                             proin.</p>
                     </div>
-                    <div className="item">
+                    <div className="item" data-aos="fade-up"
+                         data-aos-duration="2000">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a lacus aenean pulvinar
                             euismod
                             proin.</p>
@@ -1133,7 +1277,8 @@ const HomeMain = React.memo((props) => {
                                 /2021</p>
                         </div>
                     </div>
-                    <div className="item">
+                    <div className="item" data-aos="fade-up"
+                         data-aos-duration="2500">
                         <div className="shield">
                             <p>Q2 <br/>
                                 /2022</p>
@@ -1150,35 +1295,35 @@ const HomeMain = React.memo((props) => {
         </section>
         <section className="block team" id="team">
             <div className="container">
-                <p className="title-ch">Team</p>
-                <a href="#" className="white-paper">
+                <p className="title-ch" data-aos="zoom-out">Team</p>
+                <a href="#" className="white-paper" data-aos="zoom-out">
                     <img src="images/team/download.png" alt=""/>
                 </a>
                 <div id="list-members" className="list-members owl-carousel owl-theme">
-                    <div className="item">
+                    <div className="item" data-aos="fade-left" data-aos-duration="500" data-aos-easing="linear">
                         <img src="images/team/m1.png" alt=""/>
                         <p className="name">Name demo 1</p>
                         <p className="role">Co-founder/<br/>
                             Game Manager</p>
                     </div>
-                    <div className="item">
+                    <div className="item" data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear">
                         <img src="images/team/m2.png" alt=""/>
                         <p className="name">Name demo 2</p>
                         <p className="role">Founder/<br/>
                             Project manager</p>
                     </div>
-                    <div className="item">
+                    <div className="item" data-aos="fade-left" data-aos-duration="1500" data-aos-easing="linear">
                         <img src="images/team/m3.png" alt=""/>
                         <p className="name">Name demo 3</p>
                         <p className="role">Co-Founder/<br/>
                             Blockchain Advisor</p>
                     </div>
-                    <div className="item">
+                    <div className="item" data-aos="fade-left" data-aos-duration="2000" data-aos-easing="linear">
                         <img src="images/team/m4.png" alt=""/>
                         <p className="name">Name demo 4</p>
                         <p className="role">Co-Founder/CTO</p>
                     </div>
-                    <div className="item">
+                    <div className="item" data-aos="fade-left" data-aos-duration="2500" data-aos-easing="linear">
                         <img src="images/team/m1.png" alt=""/>
                         <p className="name">Name demo 1</p>
                         <p className="role">Co-founder/<br/>
@@ -1205,26 +1350,26 @@ const HomeMain = React.memo((props) => {
             </div>
         </section>
         <section className="block partner" id="partner">
-            <div className="container">
-                <p className="title-ch">Our partners</p>
+            <div className="container" data-aos="fade-right">
+                <p className="title-ch" data-aos="zoom-in">Our partners</p>
 
                 <div id="list-partners" className="list-partners owl-carousel owl-theme">
-                    <div className="item">
+                    <div className="item" data-aos="fade-right" data-aos-duration="500" data-aos-easing="linear">
                         <img src="images/partner/p1.png" alt=""/>
                         <img src="images/partner/p6.png" alt=""/>
                         <img src="images/partner/p5.png" alt=""/>
                     </div>
-                    <div className="item">
+                    <div className="item" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="linear">
                         <img src="images/partner/p3.png" alt=""/>
                         <img src="images/partner/p4.png" alt=""/>
                         <img src="images/partner/p1.png" alt=""/>
                     </div>
-                    <div className="item">
+                    <div className="item" data-aos="fade-right" data-aos-duration="1500" data-aos-easing="linear">
                         <img src="images/partner/p5.png" alt=""/>
                         <img src="images/partner/p1.png" alt=""/>
                         <img src="images/partner/p6.png" alt=""/>
                     </div>
-                    <div className="item">
+                    <div className="item" data-aos="fade-right" data-aos-duration="2000" data-aos-easing="linear">
                         <img src="images/partner/p1.png" alt=""/>
                         <img src="images/partner/p3.png" alt=""/>
                         <img src="images/partner/p2.png" alt=""/>
@@ -1238,7 +1383,7 @@ const HomeMain = React.memo((props) => {
                 <p className="title-ch">Shop</p>
 
                 <div id="list-shops" className="list-shops owl-carousel owl-theme">
-                    <div className="item">
+                    <div className="item" data-aos="fade-up" data-aos-duration="400" data-aos-easing="linear">
                         <div className="box_img">
                             <img src="images/shop/Rectangle%2016.png" alt=""/>
                         </div>
@@ -1252,7 +1397,7 @@ const HomeMain = React.memo((props) => {
                             </div>
                         </div>
                     </div>
-                    <div className="item">
+                    <div className="item" data-aos="fade-up" data-aos-duration="600" data-aos-easing="linear">
                         <div className="box_img">
                             <img src="images/shop/Rectangle%2020.png" alt=""/>
                         </div>
@@ -1266,7 +1411,7 @@ const HomeMain = React.memo((props) => {
                             </div>
                         </div>
                     </div>
-                    <div className="item">
+                    <div className="item" data-aos="fade-up" data-aos-duration="800" data-aos-easing="linear">
                         <div className="box_img">
                             <img src="images/shop/Rectangle%2021.png" alt=""/>
                         </div>
@@ -1280,7 +1425,7 @@ const HomeMain = React.memo((props) => {
                             </div>
                         </div>
                     </div>
-                    <div className="item">
+                    <div className="item" data-aos="fade-up" data-aos-duration="1200" data-aos-easing="linear">
                         <div className="box_img">
                             <img src="images/shop/Rectangle%2022.png" alt=""/>
                         </div>
@@ -1299,18 +1444,18 @@ const HomeMain = React.memo((props) => {
         </section>
         <section className="block news" id="news">
             <div className="container">
-                <p className="title-ch">Blog/News</p>
-                <p className="title">Subcribe to our Newsletter</p>
-                <form action="" name="" id="" method="post">
+                <p className="title-ch" data-aos="fade-right">Blog/News</p>
+                <p className="title" data-aos="fade-right">Subcribe to our Newsletter</p>
+                <form action="" name="" id="" method="post" data-aos="fade-left">
                     <input type="text" name="email" id="email" placeholder="Email" required/>
                     <input type="submit" name="submit" id="submit" value=""/>
                 </form>
-                <div className="ruong-box">
+                <div className="ruong-box" data-aos="flip-right">
                     <img className="ruong" src="images/exchange/ruong2.png" alt=""/>
                     <img className="anhsang" src="images/exchange/anhsang.png" alt=""/>
                 </div>
                 <div id="list-news" className="list-shops list-news owl-carousel owl-theme">
-                    <div className="item">
+                    <div className="item" data-aos="fade-down" data-aos-duration="400" data-aos-easing="linear">
                         <div className="box_img">
                             <img src="images/shop/Rectangle%2016.png" alt=""/>
                         </div>
@@ -1320,7 +1465,7 @@ const HomeMain = React.memo((props) => {
                             mauris.</p>
 
                     </div>
-                    <div className="item">
+                    <div className="item" data-aos="fade-down" data-aos-duration="600" data-aos-easing="linear">
                         <div className="box_img">
                             <img src="images/shop/Rectangle%2020.png" alt=""/>
                         </div>
@@ -1330,7 +1475,7 @@ const HomeMain = React.memo((props) => {
                             mauris.</p>
 
                     </div>
-                    <div className="item">
+                    <div className="item" data-aos="fade-down" data-aos-duration="800" data-aos-easing="linear">
                         <div className="box_img">
                             <img src="images/shop/Rectangle%2021.png" alt=""/>
                         </div>
@@ -1340,7 +1485,7 @@ const HomeMain = React.memo((props) => {
                             mauris.</p>
 
                     </div>
-                    <div className="item">
+                    <div className="item" data-aos="fade-down" data-aos-duration="1200" data-aos-easing="linear">
                         <div className="box_img">
                             <img src="images/shop/Rectangle%2022.png" alt=""/>
                         </div>

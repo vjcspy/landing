@@ -3,10 +3,26 @@ import HomeHeader from "@components/home/HomeHeader";
 import HomeHeaderMobile from "@components/home/HomeHeaderMobile";
 import HomeFooter from "@components/home/HomeFooter";
 import dynamic from "next/dynamic";
+import Script from "next/script";
 
 const DynamicComponent = dynamic(() => import('@components/home/HomeMain'), {ssr: false})
-
+let first = true;
+if (typeof window !== 'undefined') {
+    // @ts-ignore
+    window.jQuery1 = jQuery;
+    // @ts-ignore
+    window.jQuery = jQuery;
+    // @ts-ignore
+    window.abc = '123';
+    first = false;
+}
 const Content = React.memo(() => {
+    useEffect(()=>{
+        setTimeout(() => {
+            // @ts-ignore
+            AOS.init();
+        }, 2000);
+    },[])
     useEffect(() => {
         $('a[href^="#character"]').click(function () {
             $('html, body').animate({
@@ -33,6 +49,9 @@ const Content = React.memo(() => {
         })
     }, [])
     return <div className="wrapper" id="wrapper">
+        <Script async={false} type="text/javascript" src='js/owl.carousel.js'/>
+        <Script async={false} type="text/javascript" src='js/turn.js'/>
+        <Script async={false} type="text/javascript" src='js/aos.js'/>
         <HomeHeader/>
         <DynamicComponent/>
         <HomeHeaderMobile/>

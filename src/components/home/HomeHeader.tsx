@@ -14,7 +14,7 @@ const HomeHeader = React.memo((props) => {
         }
         }>
             <video width="100%" height="" autoPlay loop muted id="vid">
-                <source src="images/header/hunterverse-poster_short32.mp4" type="video/mp4"/>
+                <source src="images/header/hunterverse-poster_short34-zip.mp4" type="video/mp4"/>
             </video>
         </div>
         <div className="box-menu">
@@ -32,6 +32,9 @@ const HomeHeader = React.memo((props) => {
             </div>
         </div>
         <div className="box-header">
+            <p className="logo-img">
+                <img src="images/logo%205.png" alt=""/>
+            </p>
             <p className="title">
                 <img src="images/img1-hd.png" alt=""/>
             </p>
@@ -42,15 +45,15 @@ const HomeHeader = React.memo((props) => {
             <div className="social">
                 <a href="#">
                     <img src="images/header/web.png" alt=""/>
-                    <img className="line-x" src="images/header/Vectorxxxx.png" alt=""/>
+                        <img className="line-x" src="images/header/Vectorxxxx.png" alt=""/>
                 </a>
                 <a href="#">
                     <img src="images/header/google.png" alt=""/>
-                    <img className="line-x" src="images/header/Vectorxxxx.png" alt=""/>
+                        <img className="line-x" src="images/header/Vectorxxxx.png" alt=""/>
                 </a>
                 <a href="#">
                     <img src="images/header/appstore.png" alt=""/>
-                    <img className="line-x" src="images/header/Vectorxxxx.png" alt=""/>
+                        <img className="line-x" src="images/header/Vectorxxxx.png" alt=""/>
                 </a>
             </div>
         </div>

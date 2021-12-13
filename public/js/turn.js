@@ -3155,4 +3155,4 @@
     $.cssTransitionEnd = getTransitionEnd;
     $.findPos = findPos;
 
-})(jQuery);
+})(window.jQuery1);
