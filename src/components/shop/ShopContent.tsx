@@ -5,7 +5,14 @@ import HomeFooter from "@components/home/HomeFooter";
 import ShopPopup from "@components/shop/ShopPopup";
 import Script from "next/script";
 import Head from 'next/head'
-
+let first = true;
+if (typeof window !== 'undefined') {
+    // @ts-ignore
+    window.jQuery1 = jQuery;
+    // @ts-ignore
+    window.jQuery = jQuery;
+    first = false;
+}
 const ShopContent = React.memo((props) => {
     useEffect(() => {
         $('.filter-x').click(function () {
@@ -18,7 +25,7 @@ const ShopContent = React.memo((props) => {
             var popup = `
         <div class="here-pop">
             <p class="title">Đặt mua thành công</p>
-            <a class="hide-pop" href="javascript:void(0)" onclick="hidePopup()">
+            <a class="hide-pop" onclick="hidePopup()">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="white"/>
 </svg>
@@ -43,8 +50,8 @@ const ShopContent = React.memo((props) => {
         `;
             $(".popup").css('display', 'block')
             // @ts-ignore
-            jQuery('.popup').modal();
-            jQuery('.modal-backdrop').show();
+            // $('.popup').modal();
+            $('.modal-backdrop').show();
             $('.modal-backdrop').html(popup)
         });
 
@@ -54,8 +61,10 @@ const ShopContent = React.memo((props) => {
         }
     }, []);
     return <>
+        {/* eslint-disable-next-line @next/next/no-script-in-head */}
         <Head>
             <link rel="stylesheet" href="css/shop.css"/>
+            <Script async={false} type="text/javascript" src='js/bootstrap.min.js'/>
         </Head>
         <div className="wrapper shop-page">
             <ShopHeader/>

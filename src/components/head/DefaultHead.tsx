@@ -24,7 +24,7 @@ const DefaultHead = React.memo<any>(() => {
             {/*<Script src="js/jquery-3.2.1.slim.min.js" type="text/javascript"/>*/}
             {/*<Script src="js/turn.js" type="text/javascript"/>*/}
             <Script src="js/popper.min.js" type="text/javascript"/>
-            <Script src="js/bootstrap.min.js" type="text/javascript"/>
+            {/*<Script src="js/bootstrap.min.js" type="text/javascript"/>*/}
             <Script src="js/aos.js" type="text/javascript"/>
             <Script src="js/templates.js" type="text/javascript"/>
             <Script src="js/csi.min.js" type="text/javascript"/>
@@ -32,8 +32,8 @@ const DefaultHead = React.memo<any>(() => {
 
             <Script src="https://unpkg.com/swiper/swiper-bundle.min.js"/>
             <Script src="https://unpkg.com/swiper/swiper-bundle.js"/>
-            <Script
-                src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"/>
+            {/*<Script*/}
+            {/*    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"/>*/}
             <Script async src="//jsfiddle.net/sach_a/r9o076xf/embed/"/>
         </Head>
     </>

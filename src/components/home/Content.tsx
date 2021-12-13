@@ -50,6 +50,7 @@ const Content = React.memo(() => {
     }, [])
     return <div className="wrapper" id="wrapper">
         <Script async={false} type="text/javascript" src='js/owl.carousel.js'/>
+        {/*<Script async={false} type="text/javascript" src='js/bootstrap.min.js'/>*/}
         <Script async={false} type="text/javascript" src='js/turn.js'/>
         <Script async={false} type="text/javascript" src='js/aos.js'/>
         <HomeHeader/>
