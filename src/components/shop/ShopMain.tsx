@@ -1,6 +1,8 @@
 import React from 'react';
 
-const ShopMain = React.memo((props) => {
+const ShopMain = React.memo<{
+    setShowPopup: (isShow: boolean) => void
+}>((props) => {
     return <>
         <div id="main">
             <div className="container">
@@ -84,7 +86,7 @@ const ShopMain = React.memo((props) => {
                                         <p>≈ $ 3,099.07</p>
                                     </div>
                                 </div>
-                                <a className="buyBtn" href="#">
+                                <a className="buyBtn" onClick={() => props?.setShowPopup(true)}>
                                     <img src="images/shoppage/Component%201%20(1).png" alt=""/>
                                 </a>
                             </div>
@@ -103,7 +105,7 @@ const ShopMain = React.memo((props) => {
                                         <p>≈ $ 3,099.07</p>
                                     </div>
                                 </div>
-                                <a className="buyBtn" href="#">
+                                <a className="buyBtn" onClick={() => props?.setShowPopup(true)}>
                                     <img src="images/shoppage/Component%201%20(1).png" alt=""/>
                                 </a>
                             </div>
@@ -122,7 +124,7 @@ const ShopMain = React.memo((props) => {
                                         <p>≈ $ 3,099.07</p>
                                     </div>
                                 </div>
-                                <a className="buyBtn" href="#">
+                                <a className="buyBtn" onClick={() => props?.setShowPopup(true)}>
                                     <img src="images/shoppage/Component%201%20(1).png" alt=""/>
                                 </a>
                             </div>
@@ -141,7 +143,7 @@ const ShopMain = React.memo((props) => {
                                         <p>≈ $ 3,099.07</p>
                                     </div>
                                 </div>
-                                <a className="buyBtn" href="#">
+                                <a className="buyBtn" onClick={() => props?.setShowPopup(true)}>
                                     <img src="images/shoppage/Component%201%20(1).png" alt=""/>
                                 </a>
                             </div>
@@ -162,7 +164,7 @@ const ShopMain = React.memo((props) => {
                                         <p>≈ $ 3,099.07</p>
                                     </div>
                                 </div>
-                                <a className="buyBtn" href="#">
+                                <a className="buyBtn" onClick={() => props?.setShowPopup(true)}>
                                     <img src="images/shoppage/Component%201%20(1).png" alt=""/>
                                 </a>
                             </div>
@@ -181,7 +183,7 @@ const ShopMain = React.memo((props) => {
                                         <p>≈ $ 3,099.07</p>
                                     </div>
                                 </div>
-                                <a className="buyBtn" href="#">
+                                <a className="buyBtn" onClick={() => props?.setShowPopup(true)}>
                                     <img src="images/shoppage/Component%201%20(1).png" alt=""/>
                                 </a>
                             </div>
@@ -200,7 +202,7 @@ const ShopMain = React.memo((props) => {
                                         <p>≈ $ 3,099.07</p>
                                     </div>
                                 </div>
-                                <a className="buyBtn" href="#">
+                                <a className="buyBtn" onClick={() => props?.setShowPopup(true)}>
                                     <img src="images/shoppage/Component%201%20(1).png" alt=""/>
                                 </a>
                             </div>
@@ -219,7 +221,7 @@ const ShopMain = React.memo((props) => {
                                         <p>≈ $ 3,099.07</p>
                                     </div>
                                 </div>
-                                <a className="buyBtn" href="#">
+                                <a className="buyBtn" onClick={() => props?.setShowPopup(true)}>
                                     <img src="images/shoppage/Component%201%20(1).png" alt=""/>
                                 </a>
                             </div>
@@ -240,7 +242,7 @@ const ShopMain = React.memo((props) => {
                                         <p>≈ $ 3,099.07</p>
                                     </div>
                                 </div>
-                                <a className="buyBtn" href="#">
+                                <a className="buyBtn" onClick={() => props?.setShowPopup(true)}>
                                     <img src="images/shoppage/Component%201%20(1).png" alt=""/>
                                 </a>
                             </div>
@@ -259,7 +261,7 @@ const ShopMain = React.memo((props) => {
                                         <p>≈ $ 3,099.07</p>
                                     </div>
                                 </div>
-                                <a className="buyBtn" href="#">
+                                <a className="buyBtn" onClick={() => props?.setShowPopup(true)}>
                                     <img src="images/shoppage/Component%201%20(1).png" alt=""/>
                                 </a>
                             </div>
@@ -278,7 +280,7 @@ const ShopMain = React.memo((props) => {
                                         <p>≈ $ 3,099.07</p>
                                     </div>
                                 </div>
-                                <a className="buyBtn" href="#">
+                                <a className="buyBtn" onClick={() => props?.setShowPopup(true)}>
                                     <img src="images/shoppage/Component%201%20(1).png" alt=""/>
                                 </a>
                             </div>
@@ -297,7 +299,7 @@ const ShopMain = React.memo((props) => {
                                         <p>≈ $ 3,099.07</p>
                                     </div>
                                 </div>
-                                <a className="buyBtn" href="#">
+                                <a className="buyBtn" onClick={() => props?.setShowPopup(true)}>
                                     <img src="images/shoppage/Component%201%20(1).png" alt=""/>
                                 </a>
                             </div>
@@ -318,7 +320,7 @@ const ShopMain = React.memo((props) => {
                                         <p>≈ $ 3,099.07</p>
                                     </div>
                                 </div>
-                                <a className="buyBtn" href="#">
+                                <a className="buyBtn" onClick={() => props?.setShowPopup(true)}>
                                     <img src="images/shoppage/Component%201%20(1).png" alt=""/>
                                 </a>
                             </div>
@@ -337,7 +339,7 @@ const ShopMain = React.memo((props) => {
                                         <p>≈ $ 3,099.07</p>
                                     </div>
                                 </div>
-                                <a className="buyBtn" href="#">
+                                <a className="buyBtn" onClick={() => props?.setShowPopup(true)}>
                                     <img src="images/shoppage/Component%201%20(1).png" alt=""/>
                                 </a>
                             </div>
@@ -356,7 +358,7 @@ const ShopMain = React.memo((props) => {
                                         <p>≈ $ 3,099.07</p>
                                     </div>
                                 </div>
-                                <a className="buyBtn" href="#">
+                                <a className="buyBtn" onClick={() => props?.setShowPopup(true)}>
                                     <img src="images/shoppage/Component%201%20(1).png" alt=""/>
                                 </a>
                             </div>
@@ -375,7 +377,7 @@ const ShopMain = React.memo((props) => {
                                         <p>≈ $ 3,099.07</p>
                                     </div>
                                 </div>
-                                <a className="buyBtn" href="#">
+                                <a className="buyBtn" onClick={() => props?.setShowPopup(true)}>
                                     <img src="images/shoppage/Component%201%20(1).png" alt=""/>
                                 </a>
                             </div>

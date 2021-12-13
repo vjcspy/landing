@@ -12,7 +12,7 @@ const ShopHeader = React.memo((props) => {
                 </div>
                 <div className="col-md-5">
                     <form action="#" name="searchForm" id="searchForm" method="post">
-                        <input type="text" name="keyword" id="keyword" value=""
+                        <input type="text" name="keyword" id="keyword"
                                placeholder="Search mystery box theme such as: tokidoki"/>
                         <a href="#"><i className="fa fa-search"></i></a>
                     </form>
