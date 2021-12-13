@@ -24,39 +24,46 @@
   margin: auto;
   text-align: center;
   position: absolute;
-  top: 80px; }
+  top: 0px; }
   @media all and (min-width: 1500px) {
     .header .box-header {
-      top: 150px; } }
+      top: 20px; } }
   @media all and (min-width: 1600px) {
     .header .box-header {
-      top: 200px; } }
+      top: 50px; } }
   @media all and (min-width: 1700px) {
     .header .box-header {
-      top: 295px; } }
+      top: 100px; } }
   .header .box-header .summary {
     margin: 52px 0px; }
   .header .box-header .social a {
     position: relative;
     margin-right: 20px; }
     .header .box-header .social a:hover .line-x {
-      left: calc(100% - 62px); }
+      left: calc(100% - 40px); }
     .header .box-header .social a .line-x {
       position: absolute;
       left: 59px;
       top: -17px;
       transition: 0.8s; }
+      @media all and (max-width: 768px) {
+        .header .box-header .social a .line-x {
+          left: 30px;
+          top: 2px;
+          height: 100%; } }
 
 @media all and (max-width: 768px) {
   .header {
     background-size: 100% auto;
     width: 100%;
-    height: 35vh;
+    height: 66vh;
     overflow: hidden; }
     .header .box-menu {
       display: none; }
     .header .box-header {
       top: 100px; }
+      .header .box-header .logo-img img {
+        height: 70px; }
       .header .box-header img {
         max-width: 100%;
         height: 40px;
@@ -68,7 +75,17 @@
           height: 40px;
           overflow: hidden; }
       .header .box-header .social img {
-        height: 30px; } }
+        height: 30px; }
+    .header .video {
+      position: relative;
+      top: 50px;
+      overflow: hidden; }
+      .header .video video {
+        width: 1356px;
+        height: auto;
+        text-align: center;
+        left: -488px;
+        position: relative; } }
 .header-shop {
   background: url("../images/shoppage/bgShopMenu.png") center center no-repeat;
   background-size: 100% 100%;

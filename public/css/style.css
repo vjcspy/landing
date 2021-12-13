@@ -154,7 +154,7 @@ body img {
     background: url("../images/flipbook/bg.png") center center no-repeat, #652528;
     background-size: 100% 100%;
     height: 900px;
-    padding-top: 70px;
+    padding-top: 95px;
     overflow: hidden; }
     .wrapper .story .outer-flip {
       /* Áp dụng animation vào phần tử */ }
@@ -211,7 +211,7 @@ body img {
         position: absolute;
         border: 0px;
         bottom: 0px;
-        right: -50px;
+        right: -200px;
         z-index: 999;
         padding: 30px 30px 0px 30px; }
         @media all and (max-width: 768px) {
@@ -219,20 +219,20 @@ body img {
             display: none; } }
         @media all and (min-width: 1600px) {
           .wrapper .story .outer-flip .male {
-            right: -100px; } }
+            right: -200px; } }
       .wrapper .story .outer-flip .female {
         position: absolute;
         border: 0px;
         z-index: 999;
         bottom: 0px;
-        left: -50px;
+        left: -200px;
         padding: 30px 30px 0px 30px; }
         @media all and (max-width: 768px) {
           .wrapper .story .outer-flip .female {
             display: none; } }
         @media all and (min-width: 1600px) {
           .wrapper .story .outer-flip .female {
-            left: -100px; } }
+            left: -200px; } }
       .wrapper .story .outer-flip .anhsang-fm {
         position: absolute;
         top: -83px;
@@ -375,7 +375,7 @@ body img {
       height: 53px;
       line-height: 53px;
       position: absolute;
-      top: 90px;
+      top: -20px;
       left: 0;
       right: 0;
       width: 260px;
@@ -408,18 +408,14 @@ body img {
       -webkit-text-fill-color: white;
       -webkit-animation: fill 0.5s infinite alternate; }
     .wrapper .character .row-character {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      grid-gap: 20px;
       width: 800px;
       margin: 0px auto 80px; }
-      .wrapper .character .row-character .item {
+      .wrapper .character .row-character .item .item-ch {
         border: 4px solid #EFDBBE;
         border-radius: 20px; }
-        .wrapper .character .row-character .item:hover {
-          border: 4px solid yellow; }
-      .wrapper .character .row-character .active {
-        border: 4px solid yellow; }
+      .wrapper .character .row-character .item .active {
+        border: 4px solid yellow;
+        border-radius: 20px; }
     .wrapper .character .detail-character .active {
       display: flex !important; }
     .wrapper .character .detail-character .hidden {
@@ -648,7 +644,7 @@ body img {
     .wrapper .roadmap .line {
       background: url("../images/roadmap/line.png") center center no-repeat;
       position: absolute;
-      top: 50%;
+      top: 450px;
       left: 0;
       width: 100%;
       height: 5px; }
@@ -1019,7 +1015,7 @@ body img {
     .wrapper .news form {
       position: relative;
       width: 640px;
-      margin: auto; }
+      margin: 30px auto; }
       @media all and (max-width: 640px) {
         .wrapper .news form {
           width: 90%; } }
@@ -1151,6 +1147,8 @@ body img {
       display: none !important; }
     .wrapper .story .story_mobile {
       display: block !important; }
+      .wrapper .story .story_mobile .owl-carousel {
+        height: 688px !important; }
       .wrapper .story .story_mobile .item .odd {
         background: url(../images/Page-right.png) center center no-repeat;
         background-size: 100% 100%; }
@@ -1158,7 +1156,7 @@ body img {
         background: url(../images/Page.png) center center no-repeat;
         background-size: 100% 100%; }
       .wrapper .story .story_mobile .item .page {
-        min-height: 710px;
+        min-height: 600px;
         padding: 0px 30px; }
         .wrapper .story .story_mobile .item .page p {
           font-size: 13px;
@@ -1210,8 +1208,8 @@ body img {
         .wrapper .story .story_mobile .owl-nav i:before {
           display: none; }
   .wrapper .teaser {
-    height: 603px;
-    padding-top: 220px;
+    height: 564px;
+    padding-top: 200px;
     padding-bottom: 60px;
     background-size: auto 100%; }
     .wrapper .teaser .title {
@@ -1220,7 +1218,7 @@ body img {
       background-size: 100% 100%;
       line-height: 34px;
       font-size: 16px;
-      top: 203px; }
+      top: -15px; }
     .wrapper .teaser .box-video {
       height: unset;
       background-size: 100% 100%;
@@ -1235,8 +1233,20 @@ body img {
       font-size: 24px;
       -webkit-text-stroke: 2px #CD5907; }
     .wrapper .character .row-character {
-      width: 100%;
-      overflow: scroll; }
+      width: 80%;
+      margin-bottom: 50px; }
+      .wrapper .character .row-character .item {
+        width: 75px;
+        height: 75px;
+        margin: auto; }
+      .wrapper .character .row-character .owl-next {
+        position: absolute;
+        bottom: 30px;
+        right: -37px !important; }
+      .wrapper .character .row-character .owl-prev {
+        position: absolute;
+        bottom: 30px;
+        left: -37px !important; }
     .wrapper .character .detail-character .box-title .title {
       width: unset; }
     .wrapper .character .detail-character .box-title a {
@@ -1249,7 +1259,7 @@ body img {
         order: 1;
         margin-bottom: 30px; }
       .wrapper .character .detail-character .active .hidden-mobile {
-        display: none; }
+        display: block; }
     .wrapper .character .detail-character .skills {
       display: block; }
       .wrapper .character .detail-character .skills .skill {

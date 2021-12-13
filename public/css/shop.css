@@ -147,7 +147,18 @@ html {
       height: 247px;
       width: 270px;
       margin: auto;
-      display: -webkit-box; }
+      display: -webkit-box;
+      position: relative; }
+      #main .outer-prd .item .box_img .top-right {
+        position: absolute;
+        background: url("../images/shoppage/top-right.svg") center right no-repeat;
+        padding: 5px 15px; }
+        #main .outer-prd .item .box_img .top-right img {
+          width: 18px;
+          height: 25px;
+          margin: 0; }
+        #main .outer-prd .item .box_img .top-right span {
+          font-size: 14px; }
       #main .outer-prd .item .box_img img {
         width: 216px;
         height: 194px;

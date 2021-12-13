@@ -181,6 +181,20 @@ html {
         width: 270px;
         margin: auto;
         display: -webkit-box;
+        position: relative;
+        .top-right{
+          position: absolute;
+          background: url("../images/shoppage/top-right.svg") center right no-repeat;
+          padding:5px 15px;
+          img{
+            width: 18px;
+            height: 25px;
+            margin: 0;
+          }
+          span{
+            font-size: 14px;
+          }
+        }
         img {
           width: 216px;
           height: 194px;
