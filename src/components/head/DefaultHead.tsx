@@ -21,6 +21,7 @@ const DefaultHead = React.memo<any>(() => {
             <link rel="stylesheet" href="scss/css/owl.carousel.min.css"/>
             <link rel="stylesheet" href="scss/font-awesome/css/font-awesome.css"/>
             <link rel="stylesheet" href="css/aos.css"/>
+            <link rel="stylesheet" href="css/custom.css"/>
             {/*<Script src="js/jquery-3.2.1.slim.min.js" type="text/javascript"/>*/}
             {/*<Script src="js/turn.js" type="text/javascript"/>*/}
             <Script src="js/popper.min.js" type="text/javascript"/>

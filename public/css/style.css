@@ -323,7 +323,7 @@ body img {
             .wrapper .story .try .t .rel .book .page p {
               padding-left: 40px;
               padding-right: 40px;
-              text-align: left !important;
+              text-align: justify !important;
               font-size: 13px;
               margin-bottom: 8px; }
             .wrapper .story .try .t .rel .book .page ul {

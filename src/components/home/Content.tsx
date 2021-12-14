@@ -39,13 +39,15 @@ const Content = React.memo(() => {
             var pointto = parentx.children('.hidden-mobile');
             if ($(this).hasClass('collapse-char')) {
                 $(this).removeClass('collapse-char')
-                $(this).html('Xem thông tin');
+                $(this).html('See more');
                 pointto.hide();
             } else {
-                $(this).html('Ẩn thông tin');
+                $(this).html('Collpase');
                 $(this).addClass('collapse-char');
                 pointto.show();
             }
+
+            //        console.log(pointto);
         })
     }, [])
     return <div className="wrapper" id="wrapper">

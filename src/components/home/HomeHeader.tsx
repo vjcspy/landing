@@ -7,16 +7,6 @@ const HomeHeader = React.memo((props) => {
     }, [])
 
     return <div className="header">
-        {/*<div className="video" style={{*/}
-        {/*    width: "100%",*/}
-        {/*    position: "relative",*/}
-        {/*    top: 0*/}
-        {/*}*/}
-        {/*}>*/}
-        {/*    <video width="100%" height="" autoPlay loop muted id="vid">*/}
-        {/*        <source src="images/header/hunterverse-poster_short34-zip.mp4" type="video/mp4"/>*/}
-        {/*    </video>*/}
-        {/*</div>*/}
         <div className="box-menu">
             <div className="container">
                 <ul className="menu">
@@ -27,22 +17,31 @@ const HomeHeader = React.memo((props) => {
                     <li><a href="#team">TEAM</a></li>
                     <li><a href="#news">BLOG/NEWs</a></li>
                     <li><a href="#">MYSTERY BOX</a></li>
-                    <li><a href="#">Connect Wallet</a></li>
+                    <li><a href="#" style={{color: "yellow",fontWeight:900}}>Connect Wallet</a></li>
                 </ul>
             </div>
         </div>
         <div className="box-header">
-            {/*<p className="logo-img">*/}
-            {/*    <img src="images/logo%205.png" alt=""/>*/}
-            {/*</p>*/}
-            {/*<p className="title">*/}
-            {/*    <img src="images/img1-hd.png" alt=""/>*/}
-            {/*</p>*/}
-            {/*<p className="summary">*/}
-            {/*    <img src="images/img2-hd.png" alt=""/>*/}
-            {/*</p>*/}
+            <p className="logo-img">
+                <img src="images/logo%205.png" alt=""/>
+            </p>
 
-            <div className="social">
+            <div className="social mobile">
+                <a href="#">
+                    <img src="images/header/web.png" alt=""/>
+                        <img className="line-x" src="images/header/Vectorxxxx.png" alt=""/>
+                </a>
+                <br/>
+                <a href="#">
+                    <img src="images/header/google.png" alt=""/>
+                        <img className="line-x" src="images/header/Vectorxxxx.png" alt=""/>
+                </a>
+                <a href="#">
+                    <img src="images/header/appstore.png" alt=""/>
+                        <img className="line-x" src="images/header/Vectorxxxx.png" alt=""/>
+                </a>
+            </div>
+            <div className="social web">
                 <a href="#">
                     <img src="images/header/web.png" alt=""/>
                         <img className="line-x" src="images/header/Vectorxxxx.png" alt=""/>

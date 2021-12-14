@@ -52,6 +52,7 @@
 
 @media all and (max-width: 768px) {
   .header {
+    background: url(../images/bg-header_mobile.png) center center no-repeat, #652528;
     background-size: auto 101%;
     width: 100%;
     height: 66vh;
